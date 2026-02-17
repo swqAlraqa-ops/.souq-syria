@@ -1,0 +1,19 @@
+<script>
+function updateFields() {
+    const cat = document.getElementById('category').value;
+    const dynamicFields = document.getElementById('dynamicFields');
+    dynamicFields.innerHTML = ''; // تفريغ الحقول
+
+    if(cat === 'cars') {
+        dynamicFields.innerHTML = `
+            <input type="number" placeholder="سنة الصنع" required>
+            <input type="text" placeholder="نوع الوقود">
+        `;
+    } else if(cat === 'realestate') {
+        dynamicFields.innerHTML = `
+            <input type="number" placeholder="المساحة بالمتر" required>
+            <input type="number" placeholder="عدد الغرف">
+        `;
+    }
+}
+</script>
