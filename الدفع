@@ -1,19 +1,68 @@
-<script>
-function updateFields() {
-    const cat = document.getElementById('category').value;
-    const dynamicFields = document.getElementById('dynamicFields');
-    dynamicFields.innerHTML = ''; // تفريغ الحقول
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفعيل الاشتراك - سوق سوريا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --mint: #3EB489; --white: #ffffff; --bg: #f4f7f6; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        
+        .payment-card { max-width: 450px; width: 100%; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+        .icon-box { font-size: 50px; color: var(--mint); margin-bottom: 15px; }
+        h2 { color: #333; margin-bottom: 10px; }
+        p { color: #666; line-height: 1.6; }
+        
+        .account-box { 
+            background: #f0fff4; border: 2px dashed var(--mint); padding: 20px; 
+            border-radius: 12px; margin: 25px 0; position: relative;
+        }
+        .account-number { font-size: 20px; font-weight: bold; color: var(--mint); letter-spacing: 1px; }
+        .copy-btn { font-size: 12px; color: #888; display: block; margin-top: 5px; cursor: pointer; }
 
-    if(cat === 'cars') {
-        dynamicFields.innerHTML = `
-            <input type="number" placeholder="سنة الصنع" required>
-            <input type="text" placeholder="نوع الوقود">
-        `;
-    } else if(cat === 'realestate') {
-        dynamicFields.innerHTML = `
-            <input type="number" placeholder="المساحة بالمتر" required>
-            <input type="number" placeholder="عدد الغرف">
-        `;
-    }
+        .whatsapp-btn { 
+            background: #25D366; color: white; border: none; padding: 15px; width: 100%; 
+            border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 18px; 
+            text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: 0.3s;
+        }
+        .whatsapp-btn:hover { background: #1eb954; transform: translateY(-3px); }
+        
+        .footer-note { font-size: 13px; color: #999; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="payment-card">
+    <div class="icon-box">💳</div>
+    <h2>تفعيل باقة التاجر</h2>
+    <p>لنشر إعلانك، يرجى تحويل رسوم الاشتراك عبر خدمة <b>شام كاش</b> إلى الحساب التالي:</p>
+
+    <div class="account-box">
+        <span class="account-number" id="accNum">3944090300619206</span>
+        <span class="copy-btn" onclick="copyText()">اضغط لنسخ الرقم</span>
+    </div>
+
+    <p style="font-weight: bold; color: #444;">بعد التحويل، أرسل صورة الإيصال لتفعيل حسابك فوراً:</p>
+
+    <a href="https://wa.me/963935423267?text=مرحباً، قمت بالتحويل لتفعيل حسابي في سوق سوريا. رقم الحساب: 3944090300619206" class="whatsapp-btn">
+        <span>إرسال الإيصال عبر واتساب</span>
+    </a>
+
+    <div class="footer-note">
+        سيتم مراجعة الدفع من قبل الإدارة وتفعيل الإعلان خلال أقل من ساعة.
+    </div>
+    <a href="index.html" style="display:block; margin-top:20px; color:var(--mint); text-decoration:none; font-size:14px;">العودة للرئيسية</a>
+</div>
+
+<script>
+function copyText() {
+    const text = document.getElementById("accNum").innerText;
+    navigator.clipboard.writeText(text);
+    alert("تم نسخ رقم الحساب بنجاح!");
 }
 </script>
+
+</body>
+</html>
