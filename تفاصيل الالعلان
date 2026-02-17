@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الإعلان | سوق سوريا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --mint: #3EB489; --white: #ffffff; --bg: #f4f7f6; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; padding-bottom: 50px; }
+        
+        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 22px; font-weight: bold; color: var(--mint); text-decoration: none; }
+
+        .container { max-width: 800px; margin: 20px auto; background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .ad-image { width: 100%; height: 400px; background: #eee url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 10px; }
+        
+        .ad-header { margin-top: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .price { color: var(--mint); font-size: 28px; font-weight: bold; margin: 10px 0; }
+        
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .spec-item { background: #f9f9f9; padding: 12px; border-radius: 8px; border-right: 4px solid var(--mint); }
+        .spec-item span { color: #666; font-size: 14px; }
+        .spec-item b { display: block; color: #333; margin-top: 5px; }
+
+        .description { line-height: 1.8; color: #444; margin: 20px 0; }
+
+        .contact-box { 
+            position: fixed; bottom: 0; left: 0; right: 0; background: white; 
+            padding: 15px 5%; display: flex; gap: 10px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
+        }
+        .btn-call { flex: 1; background: var(--mint); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; text-decoration: none; text-align: center; }
+        .btn-chat { flex: 1; background: #25D366; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; text-decoration: none; text-align: center; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">سوق سوريا</a>
+</nav>
+
+<div class="container">
+    <div class="ad-image"></div>
+    
+    <div class="ad-header">
+        <h1>هيونداي أفانتي 2008 - نظيفة جداً</h1>
+        <p style="color: #888;">نشر قبل 2 ساعة • دمشق، المزة</p>
+        <div class="price">250,000,000 ل.س</div>
+    </div>
+
+    <div class="specs-grid">
+        <div class="spec-item"><span>سنة الصنع</span><b>2008</b></div>
+        <div class="spec-item"><span>نوع الوقود</span><b>بنزين</b></div>
+        <div class="spec-item"><span>ناقل الحركة</span><b>أوتوماتيك</b></div>
+        <div class="spec-item"><span>المسافة المقطوعة</span><b>150,000 كم</b></div>
+    </div>
+
+    <div class="description">
+        <h3>الوصف:</h3>
+        <p>السيارة بحالة الوكالة، خالية من العلام والخدوش تماماً. صيانة دورية كاملة، تواجد المزة خلف الرازي. السعر قابل للتفاوض البسيط للجادين فقط.</p>
+    </div>
+</div>
+
+<div class="contact-box">
+    <a href="tel:0935423267" class="btn-call">اتصال هاتفي</a>
+    <a href="https://wa.me/963935423267" class="btn-chat">واتساب البائع</a>
+</div>
+
+</body>
+</html>
