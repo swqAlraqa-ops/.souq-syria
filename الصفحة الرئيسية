@@ -10,38 +10,54 @@
         body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; color: var(--text); }
         
         /* Navbar */
-        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); sticky; top: 0; z-index: 1000; }
+        nav { 
+            background: var(--white); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            position: sticky; /* تعديل: لجعل الهيدر يتبعك عند التصفح */
+            top: 0; 
+            z-index: 1000; 
+        }
         .logo { font-size: 24px; font-weight: bold; color: var(--mint); text-decoration: none; }
         .add-btn { background: var(--mint); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .add-btn:hover { background: #2e8b68; }
+        .add-btn:hover { background: #2e8b68; transform: scale(1.05); }
 
         /* Hero Section */
         .hero { background: var(--mint); padding: 50px 5%; text-align: center; color: white; }
-        .search-container { margin-top: 20px; position: relative; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .search-container input { width: 100%; padding: 15px 25px; border-radius: 30px; border: none; font-size: 16px; outline: none; }
+        .search-container { margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .search-container input { width: 100%; padding: 15px 25px; border-radius: 30px; border: none; font-size: 16px; outline: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
         /* Categories */
         .cats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; padding: 30px 5%; }
-        .cat-item { background: white; padding: 20px; border-radius: 12px; text-align: center; cursor: pointer; border: 1px solid #eee; transition: 0.3s; }
-        .cat-item:hover { border-color: var(--mint); transform: translateY(-5px); }
-        .cat-item i { font-size: 24px; display: block; margin-bottom: 10px; }
+        .cat-item { background: white; padding: 20px; border-radius: 12px; text-align: center; cursor: pointer; border: 1px solid #eee; transition: 0.3s; text-decoration: none; color: inherit; }
+        .cat-item:hover { border-color: var(--mint); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .cat-item i { font-size: 24px; display: block; margin-bottom: 10px; font-style: normal; }
 
         /* Ads List */
-        .ads-container { padding: 20px 5%; }
-        .ad-card { background: white; display: flex; border-radius: 10px; overflow: hidden; margin-bottom: 15px; border: 1px solid #eee; text-decoration: none; color: inherit; }
-        .ad-img { width: 150px; height: 110px; background: #ddd; object-fit: cover; }
-        .ad-info { padding: 15px; flex: 1; }
-        .ad-price { color: var(--mint); font-weight: bold; font-size: 18px; }
+        .ads-container { padding: 20px 5%; max-width: 1200px; margin: auto; }
+        .ad-card { background: white; display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid #eee; text-decoration: none; color: inherit; transition: 0.2s; }
+        .ad-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .ad-img { width: 180px; height: 130px; background-size: cover; background-position: center; background-color: #eee; }
+        .ad-info { padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .ad-info h3 { margin: 0 0 10px 0; font-size: 18px; color: #333; }
+        .ad-price { color: var(--mint); font-weight: bold; font-size: 20px; }
         
-        @media (max-width: 600px) { .ad-img { width: 100px; height: 100px; } }
+        @media (max-width: 600px) { 
+            .ad-img { width: 120px; height: 100px; }
+            .ad-info h3 { font-size: 15px; }
+            .ad-price { font-size: 17px; }
+        }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo">سوق سوريا</a>
+    <a href="index.html" class="logo">سوق سوريا</a>
     <div>
-        <a href="login.html" style="margin-left:15px; color:#666; text-decoration:none;">دخول</a>
+        <a href="login.html" style="margin-left:15px; color:#666; text-decoration:none; font-weight:bold;">دخول</a>
         <a href="post-ad.html" class="add-btn">+ أضف إعلانك</a>
     </div>
 </nav>
@@ -49,28 +65,39 @@
 <section class="hero">
     <h1>أكبر سوق لبيع وشراء السيارات والعقارات في سوريا</h1>
     <div class="search-container">
-        <input type="text" placeholder="ما الذي تبحث عنه؟ (سيارة، شقة، جوال...)">
+        <input type="text" placeholder="ما الذي تبحث عنه؟ (سيارة، شقة، موبايل...)">
     </div>
 </section>
 
 <div class="cats-grid">
-    <div class="cat-item"><i>🚗</i>سيارات</div>
-    <div class="cat-item"><i>🏠</i>عقارات</div>
-    <div class="cat-item"><i>📱</i>موبايل</div>
-    <div class="cat-item"><i>🛋️</i>أثاث</div>
-    <div class="cat-item"><i>💼</i>وظائف</div>
-    <div class="cat-item"><i>🛠️</i>خدمات</div>
+    <a href="#" class="cat-item"><i>🚗</i>سيارات</a>
+    <a href="#" class="cat-item"><i>🏠</i>عقارات</a>
+    <a href="#" class="cat-item"><i>📱</i>موبايل</a>
+    <a href="#" class="cat-item"><i>🛋️</i>أثاث</a>
+    <a href="#" class="cat-item"><i>💼</i>وظائف</a>
+    <a href="#" class="cat-item"><i>🛠️</i>خدمات</a>
 </div>
 
-<div class="ads-container" id="adsList">
-    <div class="ad-card">
-        <div class="ad-img" style="background-image: url('https://via.placeholder.com/150');"></div>
+<div class="ads-container">
+    <h2 style="padding-right: 10px; border-right: 5px solid var(--mint);">آخر الإعلانات</h2>
+    
+    <a href="#" class="ad-card">
+        <div class="ad-img" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80');"></div>
         <div class="ad-info">
             <h3>هيونداي أفانتي 2008 - دمشق</h3>
-            <p>نظيفة جداً، تواجد المزة</p>
+            <p>نظيفة جداً، كرت، تواجد المزة</p>
             <div class="ad-price">250,000,000 ل.س</div>
         </div>
-    </div>
+    </a>
+
+    <a href="#" class="ad-card">
+        <div class="ad-img" style="background-image: url('https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&w=300&q=80');"></div>
+        <div class="ad-info">
+            <h3>شقة سكنية في حلب - حي الشهباء</h3>
+            <p>3 غرف وصالون، طابق ثالث، إكساء سوبر</p>
+            <div class="ad-price">950,000,000 ل.س</div>
+        </div>
+    </a>
 </div>
 
 </body>
