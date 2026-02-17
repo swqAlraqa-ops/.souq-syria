@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق سوريا | Souq Syria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --mint: #3EB489; --white: #ffffff; --bg: #f4f7f6; --text: #333; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; color: var(--text); }
+        
+        /* Navbar */
+        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--mint); text-decoration: none; }
+        .add-btn { background: var(--mint); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .add-btn:hover { background: #2e8b68; }
+
+        /* Hero Section */
+        .hero { background: var(--mint); padding: 50px 5%; text-align: center; color: white; }
+        .search-container { margin-top: 20px; position: relative; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .search-container input { width: 100%; padding: 15px 25px; border-radius: 30px; border: none; font-size: 16px; outline: none; }
+
+        /* Categories */
+        .cats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; padding: 30px 5%; }
+        .cat-item { background: white; padding: 20px; border-radius: 12px; text-align: center; cursor: pointer; border: 1px solid #eee; transition: 0.3s; }
+        .cat-item:hover { border-color: var(--mint); transform: translateY(-5px); }
+        .cat-item i { font-size: 24px; display: block; margin-bottom: 10px; }
+
+        /* Ads List */
+        .ads-container { padding: 20px 5%; }
+        .ad-card { background: white; display: flex; border-radius: 10px; overflow: hidden; margin-bottom: 15px; border: 1px solid #eee; text-decoration: none; color: inherit; }
+        .ad-img { width: 150px; height: 110px; background: #ddd; object-fit: cover; }
+        .ad-info { padding: 15px; flex: 1; }
+        .ad-price { color: var(--mint); font-weight: bold; font-size: 18px; }
+        
+        @media (max-width: 600px) { .ad-img { width: 100px; height: 100px; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo">سوق سوريا</a>
+    <div>
+        <a href="login.html" style="margin-left:15px; color:#666; text-decoration:none;">دخول</a>
+        <a href="post-ad.html" class="add-btn">+ أضف إعلانك</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>أكبر سوق لبيع وشراء السيارات والعقارات في سوريا</h1>
+    <div class="search-container">
+        <input type="text" placeholder="ما الذي تبحث عنه؟ (سيارة، شقة، جوال...)">
+    </div>
+</section>
+
+<div class="cats-grid">
+    <div class="cat-item"><i>🚗</i>سيارات</div>
+    <div class="cat-item"><i>🏠</i>عقارات</div>
+    <div class="cat-item"><i>📱</i>موبايل</div>
+    <div class="cat-item"><i>🛋️</i>أثاث</div>
+    <div class="cat-item"><i>💼</i>وظائف</div>
+    <div class="cat-item"><i>🛠️</i>خدمات</div>
+</div>
+
+<div class="ads-container" id="adsList">
+    <div class="ad-card">
+        <div class="ad-img" style="background-image: url('https://via.placeholder.com/150');"></div>
+        <div class="ad-info">
+            <h3>هيونداي أفانتي 2008 - دمشق</h3>
+            <p>نظيفة جداً، تواجد المزة</p>
+            <div class="ad-price">250,000,000 ل.س</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
